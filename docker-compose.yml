@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+    environment:
+      - FLASK_ENV=development
+    # depends_on:
+    #   - redis
+
+# redis 服务已注释，如需可取消注释
+#   redis:
+#     image: redis:alpine
+#     ports:
+#       - "6379:6379" 
